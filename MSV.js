@@ -54,6 +54,7 @@
         msvScreen.zoom = .5; //10000000000000,
         msvScreen.maxIter = 256; //65535,
         msvScreen.splits = 2; //8;
+        msvScreen.go = 1; //8;        
 
         var searchString = window.location.search.substring(1),
             i,
@@ -77,8 +78,14 @@
             else if (val[0] === "s") {
                 msvScreen.splits = val[1];
             }
+            else if (val[0] === "g") {
+                msvScreen.go = val[1];
+            }
         }
 
+        if(msvScreen.go !== 0) {
+            return;
+        }
 
         var canvasHeight = $(window).height() - 20,
             canvasWidth = $(window).width() - 10,
