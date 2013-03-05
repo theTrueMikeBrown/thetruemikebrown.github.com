@@ -83,7 +83,7 @@
             }
         }
 
-        if(msvScreen.go !== 0) {
+        if(msvScreen.go != 0) {
             return;
         }
 
