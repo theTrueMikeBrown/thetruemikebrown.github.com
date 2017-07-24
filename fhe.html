@@ -1,0 +1,50 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>FHE Chart</title>
+    <script src="bower_components/moment/moment.js"></script>
+</head>
+<body>
+<h2>This Week</h2>
+<div id="tableDiv"></div>
+<h2>Next Week</h2>
+<div id="tableDiv2"></div>
+<script>
+    var tableDiv = document.getElementById("tableDiv");
+    var tableDiv2 = document.getElementById("tableDiv2");
+
+    function create(htmlStr) {
+        var frag = document.createDocumentFragment(),
+                temp = document.createElement('div');
+        temp.innerHTML = htmlStr;
+        while (temp.firstChild) {
+            frag.appendChild(temp.firstChild);
+        }
+        return frag;
+    }
+
+    var vals = ['Lesson','Activity','Song','Testimony','Talent'];
+
+    var weekNumber = new moment().week();
+    var modAddWeek = function(offset){
+        return (offset+weekNumber) % vals.length;
+    };
+
+    var fragment = create(
+            '<table><tr><th>Name</th><th>Assignment</th></tr>' +
+            '<tr><td>Dad</td><td>' + vals[modAddWeek(0)]+ '</td></tr>' +
+            '<tr><td>Mom</td><td>' + vals[modAddWeek(1)]+ '</td></tr>' +
+            '<tr><td>Andrea</td><td>' + vals[modAddWeek(2)]+ '</td></tr>' +
+            '<tr><td>Sara</td><td>' + vals[modAddWeek(3)]+ '</td></tr>' +
+            '<tr><td>Timothy</td><td>' + vals[modAddWeek(4)]+ '</td></tr></table>');
+    tableDiv.appendChild(fragment);
+    var fragment2 = create(
+            '<table><tr><th>Name</th><th>Assignment</th></tr>' +
+            '<tr><td>Dad</td><td>' + vals[modAddWeek(1)]+ '</td></tr>' +
+            '<tr><td>Mom</td><td>' + vals[modAddWeek(2)]+ '</td></tr>' +
+            '<tr><td>Andrea</td><td>' + vals[modAddWeek(3)]+ '</td></tr>' +
+            '<tr><td>Sara</td><td>' + vals[modAddWeek(4)]+ '</td></tr>' +
+            '<tr><td>Timothy</td><td>' + vals[modAddWeek(5)]+ '</td></tr></table>');
+    tableDiv2.appendChild(fragment2);
+</script>
+
+</body></html>
