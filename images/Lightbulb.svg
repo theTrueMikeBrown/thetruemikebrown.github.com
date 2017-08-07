@@ -1,32 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
-              "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-
-<svg xmlns="http://www.w3.org/2000/svg"
-     width="8.25002in" height="4.25001in"
-     viewBox="0 0 2475 1275">
-  <path id="Selection"
-        fill="none" stroke="black" stroke-width="1"
-        d="M 169.47,204.00
-           C 164.77,193.12 152.21,186.39 152.00,169.00
-             151.87,157.55 152.44,146.89 162.17,138.93
-             171.60,131.21 180.67,131.87 192.00,132.00
-             210.37,132.22 221.91,144.95 222.00,163.00
-             222.04,171.01 222.39,175.51 218.62,183.00
-             215.01,190.18 206.53,198.47 204.13,205.00
-             202.72,208.84 203.00,212.98 203.00,217.00
-             203.00,217.00 171.00,217.00 171.00,217.00
-             171.00,212.43 171.33,208.31 169.47,204.00 Z
-           M 211.00,167.00
-           C 211.09,159.13 210.56,152.82 203.96,147.39
-             194.78,139.85 163.31,137.79 163.00,164.00
-             162.74,186.15 176.87,184.53 182.00,207.00
-             182.00,207.00 192.00,207.00 192.00,207.00
-             196.12,186.81 210.79,184.44 211.00,167.00 Z
-           M 202.00,222.00
-           C 202.00,227.95 201.20,236.13 196.37,240.40
-             193.89,242.58 188.22,242.02 185.00,242.00
-             183.32,241.99 180.74,242.06 179.21,241.40
-             173.14,238.77 172.00,227.66 172.00,222.00
-             172.00,222.00 202.00,222.00 202.00,222.00 Z" />
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   viewBox="0 0 333.33251 333.33254"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Lightbulb.svg">
+  <metadata
+     id="metadata9">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs7" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1218"
+     inkscape:window-height="697"
+     id="namedview5"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="1.5515114"
+     inkscape:cx="103.8321"
+     inkscape:cy="89.750789"
+     inkscape:window-x="54"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <path
+     id="Selection"
+     d="M 118.90672,212.95466 C 106.10594,183.32222 71.897896,164.99259 71.325946,117.62971 70.971882,86.444827 72.524317,57.411569 99.024655,35.73195 124.70792,14.705989 149.4107,16.503545 180.26875,16.857609 c 50.03199,0.599186 81.46199,35.270234 81.70711,84.430671 0.10894,21.8158 1.06219,34.07187 -9.20567,54.47141 -9.83209,19.55523 -32.92796,42.13363 -39.46453,59.91854 -3.84024,10.45851 -3.07764,21.73409 -3.07764,32.68284 0,0 -87.15424,0 -87.15424,0 0,-12.44671 0.89878,-23.66782 -4.16706,-35.40641 z M 232.01659,112.18256 C 232.26171,90.748068 230.81822,73.56234 212.84265,58.773354 187.84028,38.237635 102.12952,32.62708 101.28522,104.01185 c -0.70813,60.32708 37.77592,55.9149 51.74783,117.11352 0,0 27.2357,0 27.2357,0 11.22111,-54.98888 51.17589,-61.44374 51.74784,-108.94281 z m -24.51214,149.79636 c 0,16.20525 -2.17885,38.48405 -15.3337,50.11369 -6.75445,5.93739 -22.19709,4.41219 -30.96699,4.35772 -4.5756,-0.0272 -11.60241,0.16341 -15.76947,-1.63415 -16.53207,-7.16298 -19.63694,-37.42185 -19.63694,-52.83726 0,0 81.7071,0 81.7071,0 z"
+     inkscape:connector-curvature="0"
+     style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1" />
 </svg>
