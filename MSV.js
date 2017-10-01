@@ -135,10 +135,8 @@
                     else if (event.ctrlKey) {
                       msvScreen.zoom = msvScreen.zoom / 1.5;
                     }
-                    else {
-                      msvScreen.x = xVal;
-                      msvScreen.y = yVal;
-                    }
+                    msvScreen.x = xVal;
+                    msvScreen.y = yVal;
                     break;
                 case 2:
                     msvScreen.zoom = msvScreen.zoom * 1.5;
