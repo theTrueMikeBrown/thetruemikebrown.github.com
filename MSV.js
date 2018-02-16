@@ -129,6 +129,12 @@
 
             switch (event.which) {
                 case 1:
+                    if (event.altKey) {
+                      msvScreen.zoom = msvScreen.zoom * 1.5;                        
+                    }
+                    else if (event.ctrlKey) {
+                      msvScreen.zoom = msvScreen.zoom / 1.5;
+                    }
                     msvScreen.x = xVal;
                     msvScreen.y = yVal;
                     break;
