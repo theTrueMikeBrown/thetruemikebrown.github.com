@@ -18,8 +18,7 @@ class Player {
     this.frameWidth = 20;
     this.frameHeight = 4;
     this.frameCount = 0;
-    this.threeWayShotActive = false;
-    this.threeWayShotDuration = 0;
+    this.shotPower = 1;
     this.action = ""
     this.shotCooldown = 0;
     this.shotBaseCooldown = 20;
@@ -69,15 +68,14 @@ class Player {
       this.frameXCurrent = (this.frameXCurrent + 1) % 4;
     }
 
-    // If the three-way shot is active, decrement the timer
-    if (this.threeWayShotActive) {
-      this.threeWayShotDuration--;
-      if (this.threeWayShotDuration <= 0) {
-        this.threeWayShotActive = false; // Deactivate the power-up
-      }
-    }
-
     this.draw(ctx);
+  }
+
+  die() {
+    this.speed = 3;
+    this.health = 3;
+    this.shotPower /= 2;
+    this.reset()
   }
 
   reset() {
@@ -85,8 +83,6 @@ class Player {
     this.y = this.startY;
     this.action = ""
     this.shotCooldown = 0;
-    this.speed = 3;
-    this.health = 3;
   }
 }
 export default Player

@@ -77,7 +77,7 @@ function start() {
   
   function spawnPowerUp() {
     const y = Math.random() * (canvas.height / scale - 20);
-    const type = Math.random() < 0.5 ? 'threeWayShot' : 'health';
+    const type = Math.random() < 0.5 ? 'powerUpShot' : 'health';
     powerUps.push(new PowerUp(canvas.width / scale, y, type));
   }
   
@@ -89,9 +89,7 @@ function start() {
     ctx.fillText('Lives: ' + player.lives, 10, 55);
     ctx.fillText('Score: ' + score, 10, 80);
     ctx.fillText('Level: ' + level, 10, 105);
-    if (player.threeWayShotActive) {
-      ctx.fillText('Three-Way Shot Active', 10, 130);
-    }
+    ctx.fillText('Shot Power: ' + player.shotPower, 10, 130);
   }
 
   let bgWidth = bgImage.width
@@ -152,15 +150,38 @@ function start() {
       if (player.shotCooldown <= 0) {
         player.action = "shoot"      
         player.shotCooldown += player.shotBaseCooldown;
-        if (player.threeWayShotActive) {
-          // Three-way shot: shoot three bullets at once
-          bullets.push(new Bullet(player.x + player.width - 6, player.y + player.height / 2 - 2, 7, 0)); // Middle bullet
-          bullets.push(new Bullet(player.x + player.width - 6, player.y + player.height / 2 - 2, 7, -3)); // Left bullet
-          bullets.push(new Bullet(player.x + player.width - 6, player.y + player.height / 2 - 2, 7, 3)); // Right bullet
-        } else {
-          // Normal shot
+
+        if (player.shotPower >= 1) {
           bullets.push(new Bullet(player.x + player.width - 6, player.y + player.height / 2 - 2, 7, 0));
         }
+        if (player.shotPower >= 2) {
+          bullets.push(new Bullet(player.x + player.width - 6, player.y + player.height / 2 - 2, 7, -3));
+        }
+        if (player.shotPower >= 3) {
+          bullets.push(new Bullet(player.x + player.width - 6, player.y + player.height / 2 - 2, 7, 3));
+        }
+        if (player.shotPower >= 4) {
+          bullets.push(new Bullet(player.x + player.width, player.y + player.height / 2 - 2, 7, 0));
+        }
+        if (player.shotPower >= 5) {
+          bullets.push(new Bullet(player.x + player.width - 3, player.y + player.height / 2 - 2, 5, -5));
+        }
+        if (player.shotPower >= 6) {
+          bullets.push(new Bullet(player.x + player.width - 3, player.y + player.height / 2 - 2, 5, 5));
+        }
+        if (player.shotPower >= 7) {
+          bullets.push(new Bullet(player.x + player.width + 6, player.y + player.height / 2 - 2, -7, 0));
+        }
+        if (player.shotPower >= 8) {~
+          bullets.push(new Bullet(player.x + player.width / 2, player.y, 0, 7));
+        }
+        if (player.shotPower >= 9) {
+          bullets.push(new Bullet(player.x + player.width / 2, player.y, 0, -7));
+        }
+        if (player.shotPower >= 10) {
+          bullets.push(new Bullet(player.x + player.width - 12, player.y + player.height / 2 - 2, 7, 0));
+        }
+
         shootSound.currentTime = 0;
         shootSound.play();
       }
@@ -237,7 +258,7 @@ function start() {
           if (player.lives <= 0) {
             lose()
           } else {
-            player.reset()
+            player.die()
           }
         }
       }
@@ -281,7 +302,7 @@ function start() {
           if (player.lives <= 0) {
             lose()
           } else {
-            player.reset()
+            player.die()
           }
         }
       }
@@ -338,7 +359,7 @@ function start() {
           if (player.lives <= 0) {
             lose()
           } else {
-            player.reset()
+            player.die()
           }
         }
       }
@@ -353,9 +374,8 @@ function start() {
         player.y + player.height > powerUp.y
       ) {
         powerUps.splice(powerUpIndex, 1);
-        if (powerUp.type === 'threeWayShot') {
-          player.threeWayShotActive = true;
-          player.threeWayShotDuration = 600; // 600 frames = 10 seconds
+        if (powerUp.type === 'powerUpShot') {
+          player.shotPower++
         } else if (powerUp.type === 'health') {
           if (player.health < 3) player.health++;
           else player.lives++;
@@ -366,14 +386,14 @@ function start() {
       }
     });
   
-    if (!bossSpawned && score >= level * 30) {
+    if (!bossSpawned && score >= level * 300) {
       boss = new Boss(canvas.width / scale, canvas.height / scale / 2 - 40);
       bossSpawned = true;
     } else {
-      if (frame % 100 === 0) spawnEnemy();
+      if (frame % Math.max(100 - level * 10, 10) === 0) spawnEnemy();
     }
   
-    if (frame % 600 === 0) spawnPowerUp();
+    if (frame % 300 === 0) spawnPowerUp();
     frame++;
   }
   

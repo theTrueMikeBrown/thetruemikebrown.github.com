@@ -5,7 +5,7 @@ class PowerUp {
     this.width = 20;
     this.height = 20;
     this.dx = -2;
-    this.type = type; // Type of power-up ('health', 'threeWayShot', etc.)
+    this.type = type;
     this.frameXBase = 64;
     this.frameYBase = 62;
     this.frameWidth = 11;
@@ -13,7 +13,7 @@ class PowerUp {
   }
 
   draw(ctx) {
-    var frameOffset = this.type === 'threeWayShot' ? 0 : 1;
+    var frameOffset = this.type === 'powerUpShot' ? 0 : 1;
     const sprite = document.getElementById('sprites');
     
     ctx.drawImage(
