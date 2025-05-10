@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Blast</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+    }
+    canvas {
+      display: block;
+      background: black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas" width="" height=""></canvas>
+  <img id="sprites" src="art/sprites.png" style="display: none" />
+
+  <!-- Music no longer by <a href="https://pixabay.com/users/psychronic-13092015/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=227609">Douglas Gustafson</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=227609">Pixabay</a>, but it is a pretty cool sounding song, honestly -->
+  <audio id="bgMusic" autoplay loop></audio>
+
+  <audio id="shootSound" src="sounds/laser.mp3"></audio>
+   <!-- Sound Effect by <a href="https://pixabay.com/users/driken5482-45721595/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=236669">Driken Stan</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=236669">Pixabay</a> -->
+  <audio id="explosionSound" src="sounds/explosion.mp3"></audio>
+  <!-- Sound Effect by <a href="https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=47821">freesound_community</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=47821">Pixabay</a> -->
+  <img id="bgImage" src="art/map.png" style="display: none" />
+
+  <script type="module">
+    import Game from './src/game.js'
+    Game.Start();
+  </script>
+</body>
+</html>
