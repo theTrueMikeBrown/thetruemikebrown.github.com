@@ -1,20 +1,33 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Thetruemikebrown.github.com by theTrueMikeBrown</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <h1>Hello World</h1>
-    <p><a href="msv.html?g=0">msv</a></p>
-    <p><a href="icons.html">icons</a></p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FTL Multiverse - Sectors Viewer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
+</head>
+<body>
+  <div id="app">
+    <app-header 
+      :hide-common="hideCommonItems"
+      @toggle-hide-common="toggleHideCommon">
+    </app-header>
+    <div class="container">
+      <sector-navigation 
+        :sectors="sectors" 
+        :selected-sector="selectedSector"
+        @select-sector="selectSector">
+      </sector-navigation>
+      <sector-detail 
+        :sector="selectedSector"
+        :blueprints="blueprints"
+        :hide-common="hideCommonItems"
+        :all-sectors="sectors"
+        @select-sector="selectSector">
+      </sector-detail>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
 </html>
